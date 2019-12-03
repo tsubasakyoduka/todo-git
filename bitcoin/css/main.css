@@ -1,0 +1,13 @@
+[v-cloak] {
+    display: none;
+}
+
+#app ul {
+    list-style: none;
+    
+}
+
+#app {
+    text-align: center;
+    margin-top: 50px;
+}

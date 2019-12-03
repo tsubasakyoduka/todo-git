@@ -1,0 +1,13 @@
+#app ul {
+    list-style: none;
+    
+}
+
+#app li > span.done {
+    text-decoration: line-through;
+}
+
+#app {
+    text-align: center;
+    margin-top: 50px;
+}

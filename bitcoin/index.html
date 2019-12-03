@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Bitcoin価格</title>
+
+	<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	
+</head>
+<body>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-sm" style="background-color: #e8ce10;">
+        <a class="navbar-brand" href="index.html">Bitcoin価格表示</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+            <span class="line"></span> 
+            <span class="line"></span> 
+            <span class="line"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav4">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="../../todo/index.html">Todoリスト</a>
+            </li>
+          </ul>
+        </div>
+      </nav>    
+    </header>
+    
+    
+    <div id="app">
+        <div id="lead">
+      <p>Vue.jsのアウトプットとしてtodoリスト、Bitcoin価格表示アプリを作成しました。</p>
+      <p>&raquo;<a href="../../todo/index.html">Todoリストへ</a></p>
+    </div>
+        
+        <h2>現在のBitcoin価格</h2>
+        <section v-if="hasError">
+            Error.
+        </section>
+        <section v-else>
+            <div v-if="loading">
+                Loading...
+            </div>
+            <div v-else>
+        <ul v-cloak>
+            <li v-for="(rate, currency) in bpi">
+                {{ currency }} : {{ rate.rate_float | currencyDecimal }}
+            </li>
+        </ul>
+        </div>
+        </section>
+    </div>
+    
+    
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
